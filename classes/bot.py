@@ -158,7 +158,6 @@ class Bot:
             url += "&reply_markup={\"remove_keyboard\":%20true}"
         # send message and save response
         url_response = Bot.get_json_from_url(url)
-        print(url_response)
         message_elements = Bot.extract_message(message_elements, url_response["result"])
         Bot.save_messages(message_elements)
 

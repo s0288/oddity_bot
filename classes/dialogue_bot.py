@@ -5,6 +5,7 @@ import pandas as pd
 import datetime
 import json
 import os
+import re
 
 import sys #required because files in parent folder
 sys.path.append('../')
@@ -89,9 +90,16 @@ class DialogueBot:
         intent = response_array[8]
         # check for key_values (chat_id, datetime)
         if '{}' in message:
+            # check if a value in the message has to be retrieved from db
+            if 'dbvalue' in message:
+                # get last value from db
+                retrieve_from_db = re.findall(r'\bdbvalue\w+', message)[0].split("_",1)[1]
+                data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
+                # define variable name
+                vars()[re.findall(r'\bdbvalue\w+', message)[0]] = data[0][4]
+
             # convert string to message with .format
             message = eval(message)
-            print(message)
         if photo and '{}' in photo:
             photo = eval(photo)
         return message, keyboard, photo, key_value, intent
@@ -114,6 +122,13 @@ class DialogueBot:
             # check if {} formating values have been used - necessary for processing the user message
             temp = data[np.array(["{}" in s for s in data[:,0]])]
             for num, row in enumerate(temp):
+                # check if a value in the message has to be retrieved from db
+                if 'dbvalue' in temp[num, 0]:
+                    # get last value from db
+                    retrieve_from_db = re.findall(r'\bdbvalue\w+', temp[num, 0])[0].split("_",1)[1]
+                    data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
+                    # define variable name
+                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = data[0][4]
                 if last_user_message == temp[num, 1] and last_bot_message_for_exception == eval(temp[num, 0]):
                     response_array = temp[num, :]
         # check if response_array exists. If not, set default answer <- catch-all for errors in dialogues

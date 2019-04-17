@@ -1,0 +1,3 @@
+last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
+✏,/assessment,"""This is your progress this week: {}. What do you think about it? ✏"".format(oddity_output)",,,,,,/assessment
+"""This is your progress this week: {}. What do you think about it? ✏"".format(oddity_output)",✏,See ya.,,,,,,end_conversation
