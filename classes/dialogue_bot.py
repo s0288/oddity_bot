@@ -91,6 +91,7 @@ class DialogueBot:
         if '{}' in message:
             # convert string to message with .format
             message = eval(message)
+            print(message)
         if photo and '{}' in photo:
             photo = eval(photo)
         return message, keyboard, photo, key_value, intent
