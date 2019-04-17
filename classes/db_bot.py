@@ -41,9 +41,9 @@ class DBBot:
 # bot_main functions
     def get_active_users(self, telegram_ids_only=None):
         if telegram_ids_only is None:
-            stmt = "SELECT id, telegram_id, first_name, created_at, received_at, is_bot, language_code, is_user FROM users WHERE is_user is TRUE"
+            stmt = "SELECT id, telegram_id, first_name, created_at, received_at, is_bot, language_code, is_user FROM users WHERE is_user is TRUE AND is_bot is False"
         else:
-            stmt = "SELECT telegram_id FROM users WHERE is_user is TRUE"
+            stmt = "SELECT telegram_id FROM users WHERE is_user is TRUE AND is_bot is False"
         try:
             return self.conn.execute(stmt).fetchall()
         except Exception as e:
@@ -169,7 +169,6 @@ class DBBot:
                 args = [last_value]
         else:
             if last_value is None:
-                print('in here')
                 stmt = 'SELECT telegram_id, chat_id, message, key_value, intent, created_at, is_bot FROM updates WHERE key_value is not Null AND is_bot = cast(0 as boolean) ORDER BY id DESC'
                 args = []
             else:

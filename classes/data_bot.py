@@ -74,6 +74,10 @@ class DataBot:
                 key_value_value = key_value_value
                 DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                 print('key_value for {} added'.format(key_value))
+            elif "daily" in key_value or "weekly" in key_value or "purpose" in key_value:
+                key_value_value = key_value_value
+                DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
+                print('key_value for {} added'.format(key_value))
 
 
     ## file retrieval
@@ -205,6 +209,51 @@ class DataBot:
                 DBBot.delete_from_triggers(user_id, trigger_value, trigger_day, created_at)
                 print('removed trigger')
 
+    # for new user, create key triggers
+    def add_users(self):
+        # get all active users
+        users = DBBot.get_active_users('telegram_ids_only')
+        created_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        for user in users:
+            user_id = user[0]
+            chat_id = user_id
+            # add daily input trigger
+            trigger_value = 'daily_input'
+            trigger_day = 'tue-fri'
+            trigger_time = '08:00'
+            if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
+                received_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                DBBot.add_trigger(user_id, chat_id, trigger_value, trigger_time, trigger_day, created_at, received_at)
+                print('trigger for {} added'.format(trigger_value))
+
+            # add daily output trigger
+            trigger_value = 'daily_output'
+            trigger_day = 'mon-fri'
+            trigger_time = '19:00'
+            if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
+                received_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                DBBot.add_trigger(user_id, chat_id, trigger_value, trigger_time, trigger_day, created_at, received_at)
+                print('trigger for {} added'.format(trigger_value))
+
+            # add assessment trigger
+            trigger_value = 'assessment'
+            trigger_day = 'sun'
+            trigger_time = '19:00'
+            if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
+                received_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                DBBot.add_trigger(user_id, chat_id, trigger_value, trigger_time, trigger_day, created_at, received_at)
+                print('trigger for {} added'.format(trigger_value))
+
+            # add weekly input trigger
+            trigger_value = 'weekly_input'
+            trigger_day = 'mon'
+            trigger_time = '08:00'
+            if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
+                received_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                DBBot.add_trigger(user_id, chat_id, trigger_value, trigger_time, trigger_day, created_at, received_at)
+                print('trigger for {} added'.format(trigger_value))
+
+
 if __name__ == '__main__':
     DataBot = DataBot()
     DataBot.find_key_values()
@@ -215,3 +264,4 @@ if __name__ == '__main__':
     DBBot.delete_triggers_by_inactive_users()
     DataBot.remove_triggers('/fasten_progress')
     DataBot.remove_triggers('/fasten_success')
+    DataBot.add_users()
