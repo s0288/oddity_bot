@@ -1,0 +1,4 @@
+last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
+✏,/start,Hallo. Welchen Zweck verfolgst du? ✏,,,,,purpose_text,/start
+Hallo. Welchen Zweck verfolgst du? ✏,✏,Auf welches Wochenziel arbeitest du hin?,,,,,weekly_text,/start
+Auf welches Wochenziel arbeitest du hin?,✏,Woran arbeitest du heute?,,,,,daily_text,end_conversation
