@@ -218,7 +218,7 @@ class DataBot:
             user_id = user[0]
             chat_id = user_id
             # add daily input trigger
-            trigger_value = 'daily_input'
+            trigger_value = '/daily_input'
             trigger_day = 'tue-fri'
             trigger_time = '08:00'
             if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
@@ -227,7 +227,7 @@ class DataBot:
                 print('trigger for {} added'.format(trigger_value))
 
             # add daily output trigger
-            trigger_value = 'daily_output'
+            trigger_value = '/daily_output'
             trigger_day = 'mon-fri'
             trigger_time = '19:00'
             if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
@@ -236,7 +236,7 @@ class DataBot:
                 print('trigger for {} added'.format(trigger_value))
 
             # add assessment trigger
-            trigger_value = 'assessment'
+            trigger_value = '/assessment'
             trigger_day = 'sun'
             trigger_time = '19:00'
             if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
@@ -245,7 +245,7 @@ class DataBot:
                 print('trigger for {} added'.format(trigger_value))
 
             # add weekly input trigger
-            trigger_value = 'weekly_input'
+            trigger_value = '/weekly_input'
             trigger_day = 'mon'
             trigger_time = '08:00'
             if DBBot.check_triggers(user_id, chat_id, trigger_value, trigger_day, trigger_time) == 0:
