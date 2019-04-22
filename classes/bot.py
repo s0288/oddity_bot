@@ -192,36 +192,36 @@ class Bot:
 
 # ------ handle updates
     def handle_updates(self, first_name, chat_id, intent, message):
-        try:
-            # message container for incoming and outgoing msgs
-            message_elements = {'update_id': None, 'created_at': None, 'received_at': None, 'message_id': None, 'message': None, 'intent': None, 'keyboard': None, 'user_id': None, 'first_name': None, 'chat_id': None, 'chat_title': None, 'chat_type': None, 'bot_command': None, 'key_value': None, 'photo': None, 'is_bot': None, 'language_code': None, 'callback_query_id': None, 'group_chat_created': None, 'new_chat_participant_id': None}
+        # try:
+        # message container for incoming and outgoing msgs
+        message_elements = {'update_id': None, 'created_at': None, 'received_at': None, 'message_id': None, 'message': None, 'intent': None, 'keyboard': None, 'user_id': None, 'first_name': None, 'chat_id': None, 'chat_title': None, 'chat_type': None, 'bot_command': None, 'key_value': None, 'photo': None, 'is_bot': None, 'language_code': None, 'callback_query_id': None, 'group_chat_created': None, 'new_chat_participant_id': None}
 
-            message_elements["intent"] = intent
-            message_elements["chat_id"] = chat_id
-            ##### TO DO: catch-all until fixed:
-            if intent in ['open_conversation', 'end_conversation']:
-                return
-            ##### end catch-all
-            elif intent == '/profil':
-                message_elements["message"], message_elements["intent"], message_elements["keyboard"] = Bot.build_menu(message, intent, chat_id)
-            else:
-                message_elements["message"], message_elements["keyboard"], message_elements["photo"], message_elements["key_value"], message_elements["intent"] = DialogueBot.find_response(intent, chat_id)
-                if message_elements["keyboard"]:
-                    message_elements["keyboard"] = Bot.build_keyboard(message_elements["keyboard"])
-                if message_elements["key_value"] and "p_" in message_elements["key_value"]:
-                    Bot.add_to_profile(chat_id, "/"+message_elements["key_value"].split("_",1)[1])
+        message_elements["intent"] = intent
+        message_elements["chat_id"] = chat_id
+        ##### TO DO: catch-all until fixed:
+        if intent in ['open_conversation', 'end_conversation']:
+            return
+        ##### end catch-all
+        elif intent == '/profil':
+            message_elements["message"], message_elements["intent"], message_elements["keyboard"] = Bot.build_menu(message, intent, chat_id)
+        else:
+            message_elements["message"], message_elements["keyboard"], message_elements["photo"], message_elements["key_value"], message_elements["intent"] = DialogueBot.find_response(intent, chat_id)
+            if message_elements["keyboard"]:
+                message_elements["keyboard"] = Bot.build_keyboard(message_elements["keyboard"])
+            if message_elements["key_value"] and "p_" in message_elements["key_value"]:
+                Bot.add_to_profile(chat_id, "/"+message_elements["key_value"].split("_",1)[1])
 
-            # check for photo, doc or other
-            if message_elements["photo"]:
-                file_type = os.path.splitext(message_elements["photo"])[1]
-                if file_type == ".gif" or file_type == ".pdf":
-                    Bot.send_document(message_elements)
-                else:
-                    Bot.send_photo(message_elements)
+        # check for photo, doc or other
+        if message_elements["photo"]:
+            file_type = os.path.splitext(message_elements["photo"])[1]
+            if file_type == ".gif" or file_type == ".pdf":
+                Bot.send_document(message_elements)
             else:
-                Bot.send_message(message_elements)
-        except Exception as e:
-            print(e)
+                Bot.send_photo(message_elements)
+        else:
+            Bot.send_message(message_elements)
+        # except Exception as e:
+        #     print(e)
 
 
     def build_keyboard(items, inline_keyboard=None):
