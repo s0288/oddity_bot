@@ -1,3 +1,3 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
-✏,/weekly_input,"""This is what you worked on last week: {}. What do you think about it?"".format(weekly_input)",,,,,,/weekly_input
-"""This is what you worked on last week: {}. What do you think about it?"".format(weekly_input)",✏,What will you work on this week?,,,,,weekly_input,end_conversation
+✏,/weekly_input,"""This is what you worked on last week: {}. What do you think about it?"".format( dbvalue_weekly_input )",,,,,,/weekly_input
+"""This is what you worked on last week: {}. What do you think about it?"".format( dbvalue_weekly_input )",✏,What will you work on this week?,,,,,weekly_input,end_conversation
