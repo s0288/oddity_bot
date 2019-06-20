@@ -2,4 +2,5 @@ last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keybo
 ✏,/daily_output,"""This is what you planned: \n \n {}. \n \n What did you work on?"".format( dbvalue_daily_input )",,,,,daily_output,/daily_output
 """This is what you planned: \n \n {}. \n \n What did you work on?"".format( dbvalue_daily_input )",✏,Which behaviour are you satisfied with?,,,,,daily_happy,/daily_output
 Which behaviour are you satisfied with?,✏,Which situation could you have handled differently?,,,,,daily_improve,/daily_output
-Which situation could you have handled differently?,✏,Thanks.,,,,,,end_conversation
+Which situation could you have handled differently?,✏,Which 3 things are you grateful for today?,,,,,daily_grateful,/daily_output
+Which 3 things are you grateful for today?,✏,Thanks.,,,,,,end_conversation
