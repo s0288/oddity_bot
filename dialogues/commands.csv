@@ -1,2 +1,3 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
-✏,/commands,You can start a conversation with one of these commands:,/daily_input; /daily_output; /weekly_input; /journal,,,,,end_conversation
+✏,/commands,You can start a conversation with one of these commands:,/daily_input; /daily_output; /weekly_input; /journal; go back,,,,,/commands
+You can start a conversation with one of these commands:,go back,Just type in /commands when you feel ready to talk,,,,,,end_conversation
