@@ -74,7 +74,7 @@ class DataBot:
                 key_value_value = key_value_value
                 DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                 print('key_value for {} added'.format(key_value))
-            elif "daily" in key_value or "weekly" in key_value or "purpose" in key_value:
+            elif "daily" in key_value or "weekly" in key_value or "purpose" in key_value or "text" in key_value:
                 key_value_value = key_value_value
                 DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                 print('key_value for {} added'.format(key_value))

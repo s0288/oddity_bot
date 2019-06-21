@@ -1,5 +1,5 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
-✏,/journal,"What is on your mind? Starting points: 'Right now I'm feeling ...', 'How long have I felt this way?', 'What happened during the last 24h hours?', 'Where am I running from and to?' ✏",,,,,,/journal
+✏,/journal,"What is on your mind? Starting points: 'Right now I'm feeling ...', 'How long have I felt this way?', 'What happened during the last 24h hours?', 'Where am I running from and to?' ✏",,,,,journal_input,/journal
 "What is on your mind? Starting points: 'Right now I'm feeling ...', 'How long have I felt this way?', 'What happened during the last 24h hours?', 'Where am I running from and to?' ✏",✏,Is there anything else?,Yes; No,,,,,/journal
-Is there anything else?,Yes,"What is on your mind? Starting points: 'Right now I'm feeling ...', 'How long have I felt this way?', 'What happened during the last 24h hours?', 'Where am I running from and to?' ✏",,,,,,/journal
+Is there anything else?,Yes,"What is on your mind? Starting points: 'Right now I'm feeling ...', 'How long have I felt this way?', 'What happened during the last 24h hours?', 'Where am I running from and to?' ✏",,,,,journal_input,/journal
 Is there anything else?,✏,Thanks for sharing.,,,,,,end_conversation
