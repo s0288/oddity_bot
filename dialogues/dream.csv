@@ -1,0 +1,3 @@
+last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
+✏,/dream,What was your dream about? ✏,,,,,dream_input,/dream
+What was your dream about? ✏,✏,Thank you for sharing.,,,,,,end_conversation

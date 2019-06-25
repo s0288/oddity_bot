@@ -1,0 +1,3 @@
+last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
+✏,/start_time,Ok. What are you working on? ✏,,,,,time_input,/start_time
+Ok. What are you working on? ✏,✏,Thanks.,,,,,,end_conversation

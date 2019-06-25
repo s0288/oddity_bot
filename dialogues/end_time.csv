@@ -1,0 +1,3 @@
+last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
+✏,/stop_time,Time stopped.,Thanks,,,,time_input,/end_time
+Time stopped.,✏,Bye,,,,,,end_conversation
