@@ -19,12 +19,12 @@ class DataBot:
 
     def find_key_values(self):
         # get key values
-        #last_key_value = DBBot.get_last_value('key_values')
+        last_key_value = DBBot.get_last_value('key_values')
         # check if no files have been saved so far
-        #if last_key_value[0] == None:
-        data = DBBot.get_values_from_updates('key_values')
-        #else:
-    #        data = DBBot.get_values_from_updates('key_values', last_key_value[0].strftime('%Y-%m-%d %H:%M:%S'))
+        if last_key_value[0] == None:
+            data = DBBot.get_values_from_updates('key_values')
+        else:
+            data = DBBot.get_values_from_updates('key_values', last_key_value[0].strftime('%Y-%m-%d %H:%M:%S'))
         data.reverse()
         for row in data:
             telegram_id = row[0]
