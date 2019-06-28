@@ -2,4 +2,5 @@ last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keybo
 ✏,/idea,Which problem are you solving? ✏,,,,,problem_input,/idea
 Which problem are you solving? ✏,✏,Who are you solving it for? ✏,,,,,target_input,/idea
 Who are you solving it for? ✏,✏,How are you solving it? ✏,,,,,solution_input,/idea
-How are you solving it? ✏,✏,Thanks.,,,,,,end_conversation
+How are you solving it? ✏,✏,What will you be doing for the next 5 years? ✏,,,,,matters_input,/idea
+What will you be doing for the next 5 years? ✏,✏,Thanks,,,,,,end_conversation
