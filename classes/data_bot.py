@@ -35,7 +35,8 @@ class DataBot:
             is_bot = row[6]
             received_at = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-            if "value" in key_value or "duration" in key_value:
+            # 'value' and 'duration' are deprecated
+            if "_float" in key_value or "_integer" in key_value:
                 if re.findall("\d+\.\d+", key_value_value):
                     key_value_value = re.findall("\d+\.\d+", key_value_value)[0]
                     DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
@@ -49,7 +50,8 @@ class DataBot:
                     key_value_value = re.findall("\d+", key_value_value)[0]
                     DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                     print('key_value for {} added'.format(key_value))
-            elif "time" in key_value:
+            # 'time' is deprecated
+            elif "_time" in key_value and "_timestamp" not in key_value:
                 if re.findall("\d+\:\d+", key_value_value):
                     key_value_value = re.findall("\d+\:\d+", key_value_value)[0]
                     DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
@@ -70,14 +72,13 @@ class DataBot:
                     key_value_value = key_value_value + ':00'
                     DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                     print('key_value for {} added'.format(key_value))
-            elif "user_photo" in key_value or "meal_entry" in key_value or "meal_path" in key_value or "meal_description" in key_value or "meal_reason" in key_value:
+            # meal_entry, meal_path, meal_description, meal_reason are deprecated
+            # daily, weekly, purpose, text are deprecated
+            elif "user_photo" in key_value or "_text" in key_value:
                 key_value_value = key_value_value
                 DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                 print('key_value for {} added'.format(key_value))
-            elif "daily" in key_value or "weekly" in key_value or "purpose" in key_value or "text" in key_value:
-                key_value_value = key_value_value
-                DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
-                print('key_value for {} added'.format(key_value))
+            # currently missing: 'timestamp'
 
 
     ## file retrieval
