@@ -1,3 +1,4 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
-✏,/daily_input,What are you going to work on today?,,,,,daily_input,/daily_input
-What are you going to work on today?,✏,Thanks.,,,,,,end_conversation
+✏,/daily_input,What matters most right now? ✏,,,,,matter_input,/daily_input
+What matters most right now? ✏,✏,What are you going to work on today? ✏,,,,,daily_input,/daily_input
+What are you going to work on today? ✏,✏,Thanks.,,,,,,end_conversation
