@@ -185,7 +185,7 @@ class DBBot:
         args = [telegram_id, chat_id, key_value, value, created_at, received_at]
         self.conn.execute(stmt, args)
 
-    def get_key_values(key_value=None, telegram_id=None):
+    def get_key_values(self, key_value=None, telegram_id=None):
         if key_value is None and telegram_id is None:
             stmt = 'SELECT key_values.id, key_values.telegram_id, key_values.chat_id, key_values.key_value, key_values.value, key_values.created_at, key_values.received_at FROM key_values join users on key_values.telegram_id = users.telegram_id WHERE users.is_user is True ORDER BY key_values.created_at DESC'
             args = []
