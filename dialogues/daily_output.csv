@@ -1,6 +1,6 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
 ✏,/daily_output,"""This is what you planned: \n \n {}. \n \n What did you work on?"".format( dbvalue_daily-plan_text )",,,,,daily-realised_text,/daily_output
-"""This is what you planned: \n \n {}. \n \n What did you work on?"".format( dbvalue_daily_input )",✏,Which behaviour are you satisfied with?,,,,,daily-feedback-pos_text,/daily_output
+"""This is what you planned: \n \n {}. \n \n What did you work on?"".format( dbvalue_daily-plan_text )",✏,Which behaviour are you satisfied with?,,,,,daily-feedback-pos_text,/daily_output
 Which behaviour are you satisfied with?,✏,Which situation could you have handled differently?,,,,,daily-feedback-neg_text,/daily_output
 Which situation could you have handled differently?,✏,Which 3 things are you grateful for today?,,,,,daily-grateful_text,/daily_output
 Which 3 things are you grateful for today?,✏,Thanks.,,,,,,end_conversation

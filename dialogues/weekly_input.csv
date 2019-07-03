@@ -1,6 +1,6 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
 ✏,/weekly_input,"""This is what you worked on last week: {}. What do you think about it?"".format( dbvalue_weekly-plan_text )",,,,,weekly-realised_text,/weekly_input
-"""This is what you worked on last week: {}. What do you think about it?"".format( dbvalue_weekly_input )",✏,What matters most right now? ✏,,,,,weekly-matter_text,/weekly_input
+"""This is what you worked on last week: {}. What do you think about it?"".format( dbvalue_weekly-plan_text )",✏,What matters most right now? ✏,,,,,weekly-matter_text,/weekly_input
 What matters most right now? ✏,✏,What will you work on this week?,,,,,weekly-plan_text,/weekly_input
 What will you work on this week?,✏,And what will you work on today?,,,,,daily-plan_text,/weekly_input
 And what will you work on today?,✏,Thanks,,,,,,end_conversation
