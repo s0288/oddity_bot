@@ -94,11 +94,11 @@ class DialogueBot:
             if 'dbvalue' in message:
                 # get last value from db
                 retrieve_from_db = re.findall(r'\bdbvalue\w+', message)[0].split("_",1)[1]
-                data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
+                key_value_data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
                 # check if any values so far
-                if data:
+                if key_value_data:
                     # define variable name
-                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = data[0][4]
+                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = key_value_data[0][4]
                 else:
                     vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = '-'
 
@@ -130,11 +130,11 @@ class DialogueBot:
                 if 'dbvalue' in temp[num, 0]:
                     # get last value from db
                     retrieve_from_db = re.findall(r'\bdbvalue\w+', temp[num, 0])[0].split("_",1)[1]
-                    data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
+                    key_value_data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
                     # check if any values so far
-                    if data:
+                    if key_value_data:
                         # define variable name
-                        vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = data[0][4]
+                        vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = key_value_data[0][4]
                     else:
                         vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = '-'
                 if last_user_message == temp[num, 1] and last_bot_message_for_exception == eval(temp[num, 0]):
