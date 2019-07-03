@@ -98,9 +98,9 @@ class DialogueBot:
                 # check if any values so far
                 if key_value_data:
                     # define variable name
-                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = key_value_data[0][4]
+                    vars()[re.findall(r'\bdbvalue\w+', message)[0]] = key_value_data[0][4]
                 else:
-                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = '-'
+                    vars()[re.findall(r'\bdbvalue\w+', message)[0]] = '-'
 
             # convert string to message with .format
             message = eval(message)
