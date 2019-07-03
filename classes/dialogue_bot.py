@@ -127,9 +127,12 @@ class DialogueBot:
                     # get last value from db
                     retrieve_from_db = re.findall(r'\bdbvalue\w+', temp[num, 0])[0].split("_",1)[1]
                     data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
-                    print(data)
-                    # define variable name
-                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = data[0][4]
+                    # check if any values so far
+                    if data:
+                        # define variable name
+                        vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = data[0][4]
+                    else:
+                        vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = '-'
                 if last_user_message == temp[num, 1] and last_bot_message_for_exception == eval(temp[num, 0]):
                     response_array = temp[num, :]
         # check if response_array exists. If not, set default answer <- catch-all for errors in dialogues
