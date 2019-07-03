@@ -95,8 +95,12 @@ class DialogueBot:
                 # get last value from db
                 retrieve_from_db = re.findall(r'\bdbvalue\w+', message)[0].split("_",1)[1]
                 data = DBBot.get_key_values(key_value = retrieve_from_db, telegram_id = chat_id)
-                # define variable name
-                vars()[re.findall(r'\bdbvalue\w+', message)[0]] = data[0][4]
+                # check if any values so far
+                if data:
+                    # define variable name
+                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = data[0][4]
+                else:
+                    vars()[re.findall(r'\bdbvalue\w+', temp[num, 0])[0]] = '-'
 
             # convert string to message with .format
             message = eval(message)
