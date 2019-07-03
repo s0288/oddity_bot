@@ -73,9 +73,8 @@ class DataBot:
                     DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                     print('key_value for {} added'.format(key_value))
             # meal_entry, meal_path, meal_description, meal_reason are deprecated
-            # daily, weekly, purpose, text are deprecated
-            # remove _input later on - only needed for temporary key value retrieval
-            elif "_input" in key_value or "user_photo" in key_value or "_text" in key_value:
+            # daily, weekly, purpose, text, input are deprecated
+            elif "user_photo" in key_value or "_text" in key_value:
                 key_value_value = key_value_value
                 DBBot.add_key_value(telegram_id, chat_id, key_value, key_value_value, created_at, received_at)
                 print('key_value for {} added'.format(key_value))

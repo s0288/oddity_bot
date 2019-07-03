@@ -1,5 +1,5 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
 ✏,/start,Hey. Which purpose do you work for? ✏,,,,,purpose_text,/start
-Hey. Which purpose do you work for? ✏,✏,What will you work on this week?,,,,,weekly_text,/start
-What will you work on this week?,✏,What will you work on today?,,,,,daily_text,/start
+Hey. Which purpose do you work for? ✏,✏,What will you work on this week?,,,,,weekly-plan_text,/start
+What will you work on this week?,✏,What will you work on today?,,,,,daily-plan_text,/start
 What will you work on today?,✏,Thanks.,,,,,,end_conversation
