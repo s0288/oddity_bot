@@ -1,0 +1,3 @@
+last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
+✏,/analytics,"""Here is yesterday's activity: http://s0288.pythonanywhere.com/static/reports/analytics/analytics_{}.html.""format(datetime.datetime.now().strftime(""%Y-%m-%d"")",Thanks,,,,,/analytics
+"""Here is yesterday's activity: http://s0288.pythonanywhere.com/static/reports/analytics/analytics_{}.html.""format(datetime.datetime.now().strftime(""%Y-%m-%d"")",✏,Bye.,,,,,,end_conversation
