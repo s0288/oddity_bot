@@ -1,5 +1,5 @@
 last_bot_message,last_user_message,message,keyboard,resize_keyboard,inline_keyboard,photo,key_value,intent
 ✏,/post_mortem,Describe the situation you want to post mortem. ✏,,,,,post_mortem_situation_text,/post_mortem
-Describe the situation you want to post mortem. ✏,✏,Why did you end up in the situation? ✏,,,,,daily_plan_text,/post_mortem
-Why did you end up in the situation? ✏,✏,How do you make sure it does not happen again? ✏,,,,,,/post_mortem
+Describe the situation you want to post mortem. ✏,✏,Why did you end up in the situation? ✏,,,,,post_mortem_why_text,/post_mortem
+Why did you end up in the situation? ✏,✏,How do you make sure it does not happen again? ✏,,,,,post_mortem_correction_text,/post_mortem
 How do you make sure it does not happen again? ✏,✏,Thanks. Good job.,,,,,,end_conversation
